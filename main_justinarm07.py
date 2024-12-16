@@ -42,9 +42,10 @@ q = np.reshape(q, (-1, n_waypoints, n_dof))
 j = 0
 robot = robots.JustinArm07()
 # alternative: vis.three_pv - pyvista; vis.three_mc - meshcat
-vis.three_mc.animate_path(robot=robot, q=q[j],
-                          kwargs_robot=dict(color="red", alpha=0.2),
-                          kwargs_world=dict(img=worlds[i_world[j]], limits=limits, color="yellow"))
+vis.animate_path(robot=robot, q=q[j],
+                 kwargs_robot=dict(color="red", alpha=0.2),
+                 kwargs_world=dict(img=worlds[i_world[j]], limits=limits, color="yellow"))
+
 input()
 
 # vis.three_pv.animate_path(robot=robot, q=q_paths[0],
